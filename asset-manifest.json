@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/SchoolKaraoke/static/css/main.fb52e2fb.css",
+    "main.js": "/SchoolKaraoke/static/js/main.1183183c.js",
+    "static/js/787.5b26156c.chunk.js": "/SchoolKaraoke/static/js/787.5b26156c.chunk.js",
+    "index.html": "/SchoolKaraoke/index.html",
+    "main.fb52e2fb.css.map": "/SchoolKaraoke/static/css/main.fb52e2fb.css.map",
+    "main.1183183c.js.map": "/SchoolKaraoke/static/js/main.1183183c.js.map",
+    "787.5b26156c.chunk.js.map": "/SchoolKaraoke/static/js/787.5b26156c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fb52e2fb.css",
+    "static/js/main.1183183c.js"
+  ]
+}
