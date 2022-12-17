@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Typography, Input } from 'antd';
+import { performSearch } from "./api";
 import "./App.css";
 
 const { Title, Text } = Typography;
@@ -13,7 +14,8 @@ function App() {
       window.stream = stream;
       audio.srcObject = stream;
       stream.oninactive = function () {
-        console.log("Stream ended");}
+        console.log("Stream ended");
+      }
   }
 
   useEffect(() => {
@@ -27,13 +29,19 @@ function App() {
       });
     }
   }, []);
+  const searchButtonHandler = (e) => {
+      if (e) {
+        performSearch("караоке " + e, (results) => {
+          console.log(results);
+        });
+      }
+  }
   return (
     <div className="App">
       <Title code>Karaoke by @ret7020</Title>
       <Text code>ReactJS + AntDesign + Gh Page</Text>
       <Text code>Source on GitHub: <Text strong>ret7020/SchoolKaraoke</Text></Text>
-      <Search className="search" placeholder="Search karaoke version" enterButton addonBefore="караоке"/>
-      
+      <Search className="search" placeholder="Search karaoke version" enterButton addonBefore="караоке" onSearch={searchButtonHandler}/>
       <audio id="base" style={{display: "none"}}></audio>
     </div>
   );
