@@ -60,12 +60,12 @@ function App() {
       if (e) {
         performSearch("караоке " + e, (results) => {
           setSearchResults(results);
-        }, () => {}, setIsModalOpen, setModalTitle, setViewVideoLink);
+      }, () => {}, setIsModalOpen, setModalTitle, setViewVideoLink);
       }
   }
   return (
     <div className="App">
-      <ViewVideoModal modalState={isModalOpen} modalTitle={modalTitle} setModalState={setIsModalOpen} />
+      <ViewVideoModal modalState={isModalOpen} modalTitle={modalTitle} setModalState={setIsModalOpen} modalVideoLink={viewVideoLink} />
       <Title code>Karaoke by @ret7020</Title>
       <Text code>ReactJS + AntDesign + Gh Pages</Text>
       <Text code>Source on GitHub: <Text strong>ret7020/SchoolKaraoke</Text></Text>

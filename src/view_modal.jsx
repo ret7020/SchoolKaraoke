@@ -1,18 +1,20 @@
 import React from "react";
 import { Modal, Button } from "antd";
 
-const ViewVideoModal = ({ modalState, modalTitle, setModalState }) => {
+const ViewVideoModal = ({ modalState, modalTitle, setModalState, modalVideoLink }) => {
   return (
     <Modal
       width={"100%"}
       open={modalState}
       title={modalTitle}
-      style={{textAlign: "center"}}
+      style={{ textAlign: "center" }}
       onCancel={() => {
         setModalState(false);
       }}
       footer={[]}
-    ></Modal>
+      >
+        <iframe className="viewIframe" src={modalVideoLink} allowFullScreen allow="autoplay; encrypted-media"/>
+      </Modal>
   );
 };
 

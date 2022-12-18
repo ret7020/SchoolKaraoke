@@ -8,6 +8,7 @@ export const performSearch = (
   error_handler,
   setModal,
   setModalTitle,
+  setVideoViewLink,
   token = YT_API_TOKEN
 ) => {
   axios
@@ -26,6 +27,7 @@ export const performSearch = (
           open: <Button type="primary" onClick={() => {
             setModalTitle(video.snippet.title);
             setModal(true);
+            setVideoViewLink(`https://www.youtube.com/embed/${video.id.videoId}`);
           }}>Open</Button>,
         });
       });
@@ -34,4 +36,5 @@ export const performSearch = (
     .catch((resp) => {
       error_handler(resp);
     });
+    
 };
