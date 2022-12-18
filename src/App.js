@@ -41,10 +41,9 @@ function App() {
     }
   ];
   const [searchResults, setSearchResults] = useState();
-  const [isModalOpen, setIsModalOpen] = useState(true);
-  const [modalTitle, setModalTitle] = useState("Караоке версия абобы абобыабобыабобыабобыабобыабобыабобыабобыабобыабобы");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalTitle, setModalTitle] = useState();
   const [viewVideoLink, setViewVideoLink] = useState();
-
 
   useEffect(() => {
     if (navigator.mediaDevices) {
@@ -61,14 +60,14 @@ function App() {
       if (e) {
         performSearch("караоке " + e, (results) => {
           setSearchResults(results);
-        }, () => {});
+        }, () => {}, setIsModalOpen, setModalTitle, setViewVideoLink);
       }
   }
   return (
     <div className="App">
       <ViewVideoModal modalState={isModalOpen} modalTitle={modalTitle} setModalState={setIsModalOpen} />
       <Title code>Karaoke by @ret7020</Title>
-      <Text code>ReactJS + AntDesign + Gh Page</Text>
+      <Text code>ReactJS + AntDesign + Gh Pages</Text>
       <Text code>Source on GitHub: <Text strong>ret7020/SchoolKaraoke</Text></Text>
       <Search className="search" placeholder="Search karaoke version" enterButton addonBefore="караоке" onSearch={searchButtonHandler}/>
       <Title code>Search results</Title>

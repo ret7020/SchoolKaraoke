@@ -7,7 +7,7 @@ const ViewVideoModal = ({ modalState, modalTitle, setModalState }) => {
       width={"100%"}
       open={modalState}
       title={modalTitle}
-      
+      style={{textAlign: "center"}}
       onCancel={() => {
         setModalState(false);
       }}
