@@ -9,7 +9,7 @@ export const performSearch = (
 ) => {
   axios
     .get(
-      `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&type=video&key=${token}`
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&type=video&maxResults=10&key=${token}`
     )
     .then((resp) => {
       const raw_results = resp.data.items;

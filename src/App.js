@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Typography, Input, Table } from 'antd';
 import { performSearch } from "./api";
+import ViewVideoModal from "./view_modal";
 import "./App.css";
 
 const { Title, Text } = Typography;
@@ -40,6 +41,10 @@ function App() {
     }
   ];
   const [searchResults, setSearchResults] = useState();
+  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [modalTitle, setModalTitle] = useState("Караоке версия абобы абобыабобыабобыабобыабобыабобыабобыабобыабобыабобы");
+  const [viewVideoLink, setViewVideoLink] = useState();
+
 
   useEffect(() => {
     if (navigator.mediaDevices) {
@@ -61,6 +66,7 @@ function App() {
   }
   return (
     <div className="App">
+      <ViewVideoModal modalState={isModalOpen} modalTitle={modalTitle} setModalState={setIsModalOpen} />
       <Title code>Karaoke by @ret7020</Title>
       <Text code>ReactJS + AntDesign + Gh Page</Text>
       <Text code>Source on GitHub: <Text strong>ret7020/SchoolKaraoke</Text></Text>
